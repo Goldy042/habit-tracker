@@ -1,8 +1,12 @@
+"use client"
 import React from "react";
+import { useRouter } from "next/navigation";
+
 
 const Hero = () => {
+  const router = useRouter()
   return (
-    <section className="w-full h-screen flex flex-col items-center justify-center text-center bg-gray-100 p-6">
+    <section className="w-full pt-30 pb-10 flex flex-col items-center justify-center text-center bg-gray-100 p-6">
       {/* Hero Content */}
       <div className="max-w-2xl">
         <h2 className="text-4xl font-bold text-gray-800">Build Better Habits Every Day</h2>
@@ -10,7 +14,7 @@ const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="mt-6 flex justify-center gap-4">
-          <button className="px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-600">Get Started</button>
+          <button className="px-6 py-3 bg-gray-800 text-white rounded-md hover:bg-gray-600" onClick={() => router.push('/login')}>Get Started</button>
           <button className="px-6 py-3 border border-gray-600 text-gray-600 rounded-md hover:bg-gray-800 hover:text-white">
             Learn More
           </button>
